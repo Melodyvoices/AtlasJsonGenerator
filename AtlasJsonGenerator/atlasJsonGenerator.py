@@ -9,7 +9,7 @@ def run():
         config=json.load(f)
     # the file's full path
     path = sys.argv[1]
-    print(path)##
+    print(path)
     if platform.system() == "Windows":
         path = path.replace('\\', '/')
     sections = path.split('/')
@@ -35,11 +35,12 @@ def run():
     # get atlas' id
     if length > 1:
         sections.pop()
-    print(sections)###
     outputName = '.'.join(sections)
     sections=outputName.split('_')
     if sections[-1]=="00":
         sections.pop()
+    else:
+        outputName+="_00"
     id='_'.join(sections)
     # query relevant information in resources file
     resourceFileName="RESOURCES.json"
@@ -57,7 +58,6 @@ def run():
         resource = json.load(f,strict=False)
     groups = resource["groups"]
     flag = False
-    print(id)###
     for o in groups:
         if o["id"].lower() == id.lower():
             ls = o["resources"]
@@ -67,27 +67,15 @@ def run():
         print("没找到相关信息，请检查输入是否正确")
         return
     # generate the atlas json
-    '''
-    characterName=input("请输入pam文件名:").lower()
-    sections=characterName.split('.')
-    characterName=sections[0]
-    '''
     atlasJson = {"size": [ls[0]["width"], ls[0]["height"]]}
     sprite = {}
     for o in ls[1:]:
-        '''
-        sections=o["id"].split('_')
-        if len(sections[-1])==1:
-            tail='_'+sections[-2]+'_'+sections[-1]
-        else:
-            tail='_'+sections[-1]
-        id=characterName+tail
-        '''
         id=o["path"][-1]
         sprite.update({id: {"position": [o["ax"], o["ay"]], "size": [o["aw"], o["ah"]]}})
     atlasJson.update({"sprite": sprite})
     with open(outputName+".atlas.json",'w') as f:
         json.dump(atlasJson,f)
+        print(".atlas.json文件已生成")
 
 if __name__ == "__main__":
     run()

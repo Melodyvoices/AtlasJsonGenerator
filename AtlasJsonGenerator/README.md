@@ -15,8 +15,8 @@
     //而如果你不开启他，反正就一个一次性程序，有问题让他程序崩掉也没关系，所以我代码里写这么多验证是干什么，果然还是没有用的功能（
     "resourcePath":""
     //RESOURCES.PTX文件解包出来的RESOURCES.json文件的路径，程序生成.atlas.json文件所必要的参考文件
-    //建议使用RESOURCES.json文件的绝对路径，相对路径容易出问题，可以只填写到文件夹的路径像D:/floder/
-    //如果这项设置为空字符或者null的情况下，会在当前路径下寻找RESOURCES.json文件
+    //建议使用RESOURCES.json文件的绝对路径，相对路径容易出问题，可以只填写到文件夹的路径像 D:/floder 这样
+    //如果这项设置为空字符或者null的情况下，会在当前路径下寻找RESOURCES.json文件，如果是在terminal通过命令运行当前路径就是terminal所在路径，如果是拖动文件A到start.bat上打开则是文件A所在路径
 }
 ```
 
