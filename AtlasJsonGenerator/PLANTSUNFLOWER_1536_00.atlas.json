@@ -1,0 +1,33 @@
+{
+  "size": [256, 512],
+  "sprite": {
+    "sunflower_107x90": { "position": [1, 150], "size": [137, 115] },
+    "sunflower_10x9": { "position": [237, 246], "size": [13, 12] },
+    "sunflower_11x10": { "position": [237, 231], "size": [14, 13] },
+    "sunflower_12x16": { "position": [232, 193], "size": [16, 21] },
+    "sunflower_132x115": { "position": [1, 1], "size": [169, 147] },
+    "sunflower_13x22": { "position": [232, 142], "size": [17, 28] },
+    "sunflower_14x10": { "position": [232, 216], "size": [18, 13] },
+    "sunflower_17x15": { "position": [232, 172], "size": [22, 19] },
+    "sunflower_19x47": { "position": [225, 56], "size": [25, 60] },
+    "sunflower_20x11": { "position": [221, 365], "size": [26, 14] },
+    "sunflower_20x16": { "position": [221, 324], "size": [26, 21] },
+    "sunflower_20x17": { "position": [224, 118], "size": [26, 22] },
+    "sunflower_26x12": { "position": [221, 347], "size": [34, 16] },
+    "sunflower_28x15": { "position": [147, 450], "size": [36, 19] },
+    "sunflower_34x19": { "position": [200, 433], "size": [44, 25] },
+    "sunflower_37x21": { "position": [200, 404], "size": [48, 27] },
+    "sunflower_39x35": { "position": [172, 103], "size": [50, 45] },
+    "sunflower_40x35": { "position": [172, 56], "size": [51, 45] },
+    "sunflower_55x15": { "position": [74, 450], "size": [71, 19] },
+    "sunflower_55x19": { "position": [1, 443], "size": [71, 25] },
+    "sunflower_55x41": { "position": [172, 1], "size": [71, 53] },
+    "sunflower_70x72": { "position": [140, 150], "size": [90, 92] },
+    "sunflower_71x34": { "position": [107, 404], "size": [91, 44] },
+    "sunflower_74x61": { "position": [140, 244], "size": [95, 78] },
+    "sunflower_74x61_2": { "position": [124, 324], "size": [95, 78] },
+    "sunflower_81x33": { "position": [1, 399], "size": [104, 42] },
+    "sunflower_85x36": { "position": [1, 351], "size": [109, 46] },
+    "sunflower_94x64": { "position": [1, 267], "size": [121, 82] }
+  }
+}
