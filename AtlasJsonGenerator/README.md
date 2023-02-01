@@ -5,7 +5,7 @@
 
 ## 配置
 `config.json`文件为配置文件，内容及作用如下：
-```json
+```json5
 {
     "checkFormat":false,
     //检查输入格式功能，开启后会检查输入的参数是否为.png或.PTX后缀
