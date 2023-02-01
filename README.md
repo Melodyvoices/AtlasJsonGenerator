@@ -10,4 +10,4 @@
 
 
 ## 本项目的程序及其功能对应列表：
-- [AtlasJsonGenerator]() -- 用于自动生成TwinStar.ToolKit的第18项功能**Atlas 解包**所需要的`.atlas.json`文件
+- [AtlasJsonGenerator](https://github.com/Melodyvoices/TwinStarToolkitExtra/tree/master/AtlasJsonGenerator) -- 用于自动生成TwinStar.ToolKit的第18项功能**Atlas 解包**所需要的`.atlas.json`文件
