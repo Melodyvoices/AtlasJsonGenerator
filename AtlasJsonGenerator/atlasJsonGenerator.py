@@ -37,10 +37,11 @@ def run():
         sections.pop()
     outputName = '.'.join(sections)
     sections=outputName.split('_')
-    if sections[-1]=="00":
-        sections.pop()
+    if (len(sections[-1].strip()))==2:
+        fileNo=sections.pop()#the NO. of FILENAME_DPI_NO , such as: xxxx_1536_00 & xxxx_1536_01 , xxxx_768_00 & xxxx_768_01
     else:
-        outputName+="_00"
+        print("输入有误，名称"+outputName+"不符合格式")
+        sys.exit()
     id='_'.join(sections)
     # query relevant information in resources file
     resourceFileName="RESOURCES.json"
@@ -60,18 +61,33 @@ def run():
     flag = False
     for o in groups:
         if o["id"].lower() == id.lower():
-            ls = o["resources"]
+            theResource = o["resources"]
             flag = True
             break
     if (flag == False):
         print("没找到相关信息，请检查输入是否正确")
         return
+    index=0
+    flag=False
+    for o in theResource:
+        if (o["id"].split('_'))[-1].strip()==fileNo.strip():
+            flag=True
+            break
+        else:
+            index+=1
+    if (flag == False):
+        print("没找到相关信息，请检查输入是否正确")
+        return
+    ls=theResource[index:]
     # generate the atlas json
     atlasJson = {"size": [ls[0]["width"], ls[0]["height"]]}
     sprite = {}
     for o in ls[1:]:
         id=o["path"][-1]
-        sprite.update({id: {"position": [o["ax"], o["ay"]], "size": [o["aw"], o["ah"]]}})
+        try:
+            sprite.update({id: {"position": [o["ax"], o["ay"]], "size": [o["aw"], o["ah"]]}})
+        except:
+            break
     atlasJson.update({"sprite": sprite})
     with open(outputName+".atlas.json",'w') as f:
         json.dump(atlasJson,f)

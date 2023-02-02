@@ -11,10 +11,11 @@
     //检查输入格式功能，开启后会检查输入的参数是否为.png或.PTX后缀
     //貌似没什么作用的功能，所以默认设置关闭，我也不知道当时为啥要写这段验证代码（
     //如果只打算使用下面第一中拖放文件运行的方式可以考虑开启这项功能
-    //注意，要是开启了这项功能，下面第二点使用命令行方式中例子里最后那两种输入参数的格式就无法正常使用了
+    //注意，要是开启了这项功能，下面第二点使用命令行方式中例子里最后那种输入参数的格式就无法正常使用了
     //而如果你不开启他，反正就一个一次性程序，有问题让他程序崩掉也没关系，所以我代码里写这么多验证是干什么，果然还是没有用的功能（
     "resourcePath":""
     //RESOURCES.PTX文件解包出来的RESOURCES.json文件的路径，程序生成.atlas.json文件所必要的参考文件
+    //注意：解包出来的RESOURCES.json文件有trailing commas（尾随逗号），需要先用toolkit的第二项功能：json格式化，在“禁用尾随逗号”一项选y，格式化后的文件改名代替原来的RESOURCES.json
     //建议使用RESOURCES.json文件的绝对路径，相对路径容易出问题，可以只填写到文件夹的路径像 D:/floder 这样
     //如果这项设置为空字符或者null的情况下，会在当前路径下寻找RESOURCES.json文件，如果是在terminal通过命令运行当前路径就是terminal所在路径，如果是拖动文件A到start.bat上打开则是文件A所在路径
 }
@@ -30,5 +31,4 @@
 python ./atlasJsonGenerator.py PLANTSUNFLOWER_1536_00.png
 python ./atlasJsonGenerator.py PLANTSUNFLOWER_1536_00.PTX
 python ./atlasJsonGenerator.py PLANTSUNFLOWER_1536_00
-python ./atlasJsonGenerator.py PLANTSUNFLOWER_1536
 ```
